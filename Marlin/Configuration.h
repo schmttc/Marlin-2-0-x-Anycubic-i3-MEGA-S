@@ -1638,7 +1638,7 @@
  * or (with LCD_BED_LEVELING) the LCD controller.
  */
 #if NONE(KNUTWURST_BLTOUCH, KNUTWURST_CHIRON)
-  #define PROBE_MANUALLY
+  // #define PROBE_MANUALLY
 #endif
 
 /**
@@ -1651,7 +1651,7 @@
  * Use the nozzle as the probe, as with a conductive
  * nozzle system or a piezo-electric smart effector.
  */
-// #define NOZZLE_AS_PROBE
+#define NOZZLE_AS_PROBE
 
 /**
  * Z Servo Probe, such as an endstop switch on a rotating arm.
@@ -1828,7 +1828,7 @@
 #endif
 
 #if NONE(KNUTWURST_BLTOUCH, KNUTWURST_CHIRON)
-  #define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+  // #define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
 #endif
 
 // Most probes should stay away from the edges of the bed, but
@@ -2466,9 +2466,9 @@
 #if NONE(KNUTWURST_BLTOUCH, KNUTWURST_CHIRON)
   // #define AUTO_BED_LEVELING_3POINT
   // #define AUTO_BED_LEVELING_LINEAR
-  // #define AUTO_BED_LEVELING_BILINEAR
+  #define AUTO_BED_LEVELING_BILINEAR
   // #define AUTO_BED_LEVELING_UBL
-  #define MESH_BED_LEVELING
+  //#define MESH_BED_LEVELING
 #endif
 
 /**
@@ -2482,10 +2482,10 @@
 /**
  * Auto-leveling needs preheating
  */
-// #define PREHEAT_BEFORE_LEVELING
+#define PREHEAT_BEFORE_LEVELING
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
-  #define LEVELING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
-  #define LEVELING_BED_TEMP     50
+  #define LEVELING_NOZZLE_TEMP 200   // (°C) Only applies to E0 at this time
+  #define LEVELING_BED_TEMP     60
 #endif
 
 /**
@@ -2607,7 +2607,7 @@
     #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
   #else
     #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
-    #define GRID_MAX_POINTS_X 5    // Don't use more than 7 points per axis, implementation limited.
+    #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
     #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
   #endif
 
