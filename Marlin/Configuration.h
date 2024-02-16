@@ -1828,7 +1828,7 @@
 #endif
 
 #if NONE(KNUTWURST_BLTOUCH, KNUTWURST_CHIRON)
-  // #define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
+  #define NOZZLE_TO_PROBE_OFFSET { 0, 0, 0 }
 #endif
 
 // Most probes should stay away from the edges of the bed, but
@@ -1838,7 +1838,7 @@
 #if ENABLED(KNUTWURST_CHIRON)
   #define PROBING_MARGIN 15
 #else
-  #define PROBING_MARGIN 35
+  #define PROBING_MARGIN 15
 #endif
 
 // X and Y axis travel speed (mm/min) between probes
