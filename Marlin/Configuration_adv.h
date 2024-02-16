@@ -2081,9 +2081,9 @@
 
   // #define BABYSTEP_DISPLAY_TOTAL          // Display total babysteps since last G28
 
-  #if ENABLED(KNUTWURST_BLTOUCH)
-    #define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
-  #endif
+  //#if ENABLED(KNUTWURST_BLTOUCH)
+  #define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
+  //#endif
 
   #if ENABLED(BABYSTEP_ZPROBE_OFFSET)
     // #define BABYSTEP_HOTEND_Z_OFFSET      // For multiple hotends, babystep relative Z offsets
@@ -2171,14 +2171,14 @@
  * probe points will follow. This prevents any change from causing
  * the probe to be unable to reach any points.
  */
-#if ENABLED(KNUTWURST_BLTOUCH)
-  #if PROBE_SELECTED && !IS_KINEMATIC
-    #define PROBING_MARGIN_LEFT  10
-    #define PROBING_MARGIN_RIGHT 10
-    #define PROBING_MARGIN_FRONT 10
-    #define PROBING_MARGIN_BACK  10
-  #endif
+//#if ENABLED(KNUTWURST_BLTOUCH)
+#if PROBE_SELECTED && !IS_KINEMATIC
+  #define PROBING_MARGIN_LEFT  10
+  #define PROBING_MARGIN_RIGHT 10
+  #define PROBING_MARGIN_FRONT 10
+  #define PROBING_MARGIN_BACK  10
 #endif
+//#endif
 
 #if EITHER(MESH_BED_LEVELING, AUTO_BED_LEVELING_UBL)
   // Override the mesh area if the automatic (max) area is too large
