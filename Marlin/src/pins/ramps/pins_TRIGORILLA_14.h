@@ -34,7 +34,7 @@
 #if MB(TRIGORILLA_14_11)
   #define SERVO0_PIN                           5
   #define SERVO1_PIN                           4
-  #define SERVO2_PIN                          11
+//  #define SERVO2_PIN                          11     //Using the servo pin as Z_MIN_PROBE_PIN
   #define SERVO3_PIN                           6
 #endif
 
@@ -124,7 +124,7 @@
   #define Z2_MIN_PIN                          18  // Z-
 
   #ifndef Z_MIN_PROBE_PIN
-    #define Z_MIN_PROBE_PIN                    2  // X+
+    #define Z_MIN_PROBE_PIN                    11  // X+  // Remapping to Servo 2 block. Was previously pin 2
   #endif
 
   #define CONTROLLER_FAN_PIN            FAN1_PIN
